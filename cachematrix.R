@@ -23,6 +23,9 @@ makeCacheMatrix <- function(x = matrix()) {
 ## This function is responsible for the computation of inverse of a matrix 
 ## retrieved from makeCacheMatrix() and caching the result so that subsequent 
 ## calls to this function returns the result already computed previously.
+## This function calls the R solve function to compute the inverse of the 
+## matrix. It also assumes that the supplied matrix is always invertible
+## and is square. 
 cacheSolve <- function(x, ...) {
   i <- x$getinverse()
   if(!is.null(i)) {
